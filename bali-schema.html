@@ -278,6 +278,7 @@
       </div>
 
     </div>
+
     <div class="map-section">
       <h2>🗺️ Karta över Bali</h2>
       <p>Översikt över Bali och vår huvudsakliga rutt: flygplatsen, Canggu, Seminyak, Uluwatu, Padang Padang, Ubud, Tegenungan och Sanur.</p>
@@ -298,8 +299,6 @@
       💡 Denna ett preliminärt schema. Exakta tider och aktiviteter kan justeras efter önskemål och väderförhållanden!
     </p>
 
-    <!-- Leaflet karta -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script>
       const map = L.map('bali-map').setView([-8.65, 115.18], 11);
@@ -309,21 +308,19 @@
       }).addTo(map);
 
       const platser = [
-        { namn: "1. Flygplatsen (DPS)",       lat: -8.7467, lng: 115.1664 },
-        { namn: "2. Canggu",                  lat: -8.6478, lng: 115.1303 },
-        { namn: "3. Seminyak",                lat: -8.6913, lng: 115.1512 },
-        { namn: "4. Uluwatu Temple",          lat: -8.8290, lng: 115.0849 },
-        { namn: "5. Padang Padang Beach",     lat: -8.8111, lng: 115.1137 },
-        { namn: "6. Ubud",                    lat: -8.5069, lng: 115.2625 },
-        { namn: "7. Tegenungan Waterfall",    lat: -8.5754, lng: 115.2831 },
-        { namn: "8. Sanur Beach",             lat: -8.7059, lng: 115.2644 },
+        { namn: "1. Flygplatsen (DPS)",    lat: -8.7467, lng: 115.1664 },
+        { namn: "2. Canggu",               lat: -8.6478, lng: 115.1303 },
+        { namn: "3. Seminyak",             lat: -8.6913, lng: 115.1512 },
+        { namn: "4. Uluwatu Temple",       lat: -8.8290, lng: 115.0849 },
+        { namn: "5. Padang Padang Beach",  lat: -8.8111, lng: 115.1137 },
+        { namn: "6. Ubud",                 lat: -8.5069, lng: 115.2625 },
+        { namn: "7. Tegenungan Waterfall", lat: -8.5754, lng: 115.2831 },
+        { namn: "8. Sanur Beach",          lat: -8.7059, lng: 115.2644 },
       ];
 
-      // Rita linje mellan platserna
       const latlngs = platser.map(p => [p.lat, p.lng]);
       L.polyline(latlngs, { color: '#e74c3c', weight: 3, dashArray: '8, 6' }).addTo(map);
 
-      // Lägg till markeringar med nummer
       platser.forEach((p, i) => {
         const icon = L.divIcon({
           className: '',
