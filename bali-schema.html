@@ -282,7 +282,7 @@
     <div class="map-section">
       <h2>🗺️ Karta över Bali</h2>
       <p>Översikt över Bali och vår huvudsakliga rutt: flygplatsen, Canggu, Seminyak, Uluwatu, Padang Padang, Ubud, Tegenungan och Sanur.</p>
-      <p style="font-size: 0.9rem; color: #666; font-style: italic;">💡 <strong>Obs:</strong> Nusa Penida visas inte i embedded kartan eftersom det kräver färja från Sanur.</p>
+      <p style="font-size: 0.9rem; color: #666; font-style: italic;">💡 <strong>Obs:</strong> Nusa Penida nås med färja från Sanur (ca 30 min) och visas som en separat markering på kartan.</p>
       <div class="map-container" style="height: 450px; border-radius: 8px; overflow: hidden;">
         <div id="bali-map" style="width: 100%; height: 100%;"></div>
       </div>
@@ -330,6 +330,23 @@
         });
         L.marker([p.lat, p.lng], { icon }).addTo(map).bindPopup(p.namn);
       });
+
+      // Nusa Penida – blå markering med båtsymbol
+      const nusaIcon = L.divIcon({
+        className: '',
+        html: `<div style="background:#2980b9;color:white;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-weight:bold;font-size:13px;border:2px solid white;box-shadow:0 2px 6px rgba(0,0,0,0.4)">⛵</div>`,
+        iconSize: [28, 28],
+        iconAnchor: [14, 14],
+      });
+      L.marker([-8.7278, 115.5444], { icon: nusaIcon })
+        .addTo(map)
+        .bindPopup("9. Nusa Penida (dag 13–15)<br><em>🚢 Färja från Sanur, ca 30 min</em>");
+
+      // Streckad blå linje för färjerutten Sanur → Nusa Penida
+      L.polyline(
+        [[-8.7059, 115.2644], [-8.7278, 115.5444]],
+        { color: '#2980b9', weight: 2, dashArray: '6, 8' }
+      ).addTo(map);
     </script>
   </main>
 </body>
