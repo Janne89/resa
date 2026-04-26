@@ -1,0 +1,229 @@
+/* === Grundläggande styling === */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f0f4f8;
+    color: #333;
+}
+
+/* === Header & navigation === */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #2c3e50;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+/* === Huvudmeny (Home / Bali) === */
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #2c3e50;
+}
+
+nav a {
+    color: white;
+    background-color: #34495e;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: #1a252f;
+}
+
+/* === Undermeny (Bali-sektioner) === */
+.subnav {
+    position: sticky;
+    top: 100px;
+    z-index: 999;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    background-color: #2c3e50;
+    padding: 0.5rem 1rem;
+}
+
+.subnav a {
+    color: white;
+    background-color: #34495e;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.subnav a:hover {
+    background-color: #1a252f;
+}
+
+/* === Main content === */
+main {
+    padding: 1rem;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+main h2 {
+    font-size: 1.8rem;
+    color: #2c3e50;
+    margin: 1.5rem 0 1rem 0;
+}
+
+main h3 {
+    font-size: 1.3rem;
+    color: #34495e;
+    margin: 1.2rem 0 0.5rem 0;
+}
+
+main ul {
+    text-align: left;
+    display: inline-block;
+    max-width: 600px;
+    margin: 0.5rem auto;
+}
+
+main li {
+    margin: 0.4rem 0;
+    line-height: 1.6;
+}
+
+/* === Centrera bilder === */
+img.center {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    margin: 1rem auto;
+    display: block;
+}
+
+/* === Timer-stil === */
+.timer {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 2rem 0;
+    color: #d35400;
+    padding: 1rem;
+    background-color: #fff8e7;
+    border-radius: 8px;
+    border-left: 4px solid #d35400;
+}
+
+/* === Fakta-kort (Good to know) === */
+.facts-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 1rem;
+    text-align: left;
+}
+
+@media (min-width: 600px) {
+    .facts-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width: 1000px) {
+    .facts-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+.fact-card {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 1.2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid #d35400;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.fact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.fact-card h3 {
+    margin-top: 0;
+    margin-bottom: 0.8rem;
+    font-size: 1.1rem;
+    color: #2c3e50;
+}
+
+.fact-card p {
+    margin: 0.5rem 0;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.fact-card ul {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+}
+
+.fact-card li {
+    margin: 0.3rem 0;
+}
+
+/* === Responsiv anpassning för små skärmar === */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    nav a, .subnav a {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+    }
+
+    main {
+        padding: 0.8rem;
+    }
+
+    main h2 {
+        font-size: 1.4rem;
+    }
+
+    main h3 {
+        font-size: 1.1rem;
+    }
+
+    .timer {
+        font-size: 1.2rem;
+    }
+
+    .facts-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* === Link styling === */
+a {
+    color: #d35400;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
