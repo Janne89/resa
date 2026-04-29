@@ -5,38 +5,330 @@
   <title>Bali 2026 – Jannes resebyrå</title>
   <link rel="stylesheet" href="style.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script src="scripts/countdown-bali.js" defer></script>
+  <style>
+    /* ── Flyg-specifik styling ── */
+    .flight-section {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      text-align: left;
+    }
+
+    .flight-section h2 {
+      font-size: 1.4rem;
+      color: #2c3e50;
+      border-bottom: 2px solid #d35400;
+      padding-bottom: 0.4rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .flight-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 1.4rem 1.6rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      border-left: 4px solid #d35400;
+    }
+
+    .flight-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .flight-direction {
+      font-size: 1.05rem;
+      font-weight: bold;
+      color: #2c3e50;
+    }
+
+    .flight-date {
+      font-size: 0.82rem;
+      background: #d35400;
+      color: #fff;
+      padding: 0.25rem 0.8rem;
+      border-radius: 50px;
+      font-weight: bold;
+    }
+
+    .leg {
+      display: grid;
+      grid-template-columns: 90px 1fr 90px;
+      align-items: center;
+      gap: 0.8rem;
+      padding: 0.9rem 0;
+    }
+
+    .leg + .leg {
+      border-top: 1px dashed #ccc;
+    }
+
+    .time-block { text-align: center; }
+
+    .time-block .time {
+      font-size: 1.6rem;
+      font-weight: bold;
+      color: #2c3e50;
+      line-height: 1;
+    }
+
+    .time-block .plus1 {
+      display: block;
+      font-size: 0.68rem;
+      color: #d35400;
+      font-weight: bold;
+      margin-top: 0.1rem;
+    }
+
+    .time-block .iata {
+      font-size: 0.78rem;
+      font-weight: bold;
+      color: #34495e;
+      margin-top: 0.15rem;
+    }
+
+    .time-block .city {
+      font-size: 0.7rem;
+      color: #888;
+    }
+
+    .leg-middle { text-align: center; }
+
+    .flight-arrow {
+      font-size: 1rem;
+      color: #d35400;
+      margin-bottom: 0.3rem;
+      letter-spacing: -1px;
+    }
+
+    .leg-info {
+      font-size: 0.75rem;
+      color: #666;
+      line-height: 1.6;
+    }
+
+    .leg-info .flight-no {
+      font-weight: bold;
+      color: #2c3e50;
+      font-size: 0.8rem;
+    }
+
+    .layover {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      background: #fff8e7;
+      border-left: 3px solid #d35400;
+      border-radius: 6px;
+      padding: 0.5rem 0.9rem;
+      margin: 0.3rem 0;
+      font-size: 0.8rem;
+      color: #555;
+    }
+
+    .layover strong { color: #2c3e50; }
+
+    .total-duration {
+      text-align: right;
+      border-top: 1px solid #eee;
+      padding-top: 0.7rem;
+      margin-top: 0.8rem;
+      font-size: 0.8rem;
+      color: #888;
+    }
+
+    .total-duration strong { color: #d35400; font-size: 0.9rem; }
+
+    .note {
+      text-align: center;
+      margin-top: 2.5rem;
+      font-style: italic;
+      color: #666;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 500px) {
+      .leg { grid-template-columns: 68px 1fr 68px; gap: 0.4rem; }
+      .time-block .time { font-size: 1.2rem; }
+      .flight-card { padding: 1rem; }
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>Bali 2026</h1>
-    <nav>
-      <a href="index.html">Hem</a>
-      <a href="bali.html">Bali 2026</a>
-    </nav>
-    <nav class="subnav">
-      <a href="bali.html">Översikt</a>
-      <a href="bali-schema.html">Schema</a>
-      <a href="bali-info.html">Good to know</a>
-    </nav>
-  </header>
 
-  <main>
-    <h2>Nedräkning till Baliresa</h2>
-    <p class="timer" id="countdown">Laddar timer...</p>
-    
-    <div style="text-align: center; max-width: 800px; margin: 2rem auto;">
-      <h2>✈️ FLYG</h2>
-      <p style="font-size: 1.1rem; line-height: 1.8;">
-        <strong>16 juli 22:40</strong> – ARN → DPS<br>
-        <strong>17 juli 23:55</strong> (+1) – Ankomst Bali<br>
-        <strong>1 augusti 00:35</strong> – DPS → ARN
-      </p>
-      
-      <p style="margin-top: 2rem; font-style: italic;">
-        📚 För detaljerat itinerarium dag för dag, se <a href="bali-schema.html" style="color: #d35400;">Schema</a>
-      </p>
+<header>
+  <h1>Bali 2026</h1>
+  <nav>
+    <a href="index.html">Hem</a>
+    <a href="bali.html">Bali 2026</a>
+  </nav>
+  <nav class="subnav">
+    <a href="bali.html">Översikt</a>
+    <a href="bali-schema.html">Schema</a>
+    <a href="bali-info.html">Good to know</a>
+  </nav>
+</header>
+
+<main>
+  <h2>Nedräkning till Baliresa</h2>
+  <p class="timer" id="countdown">Laddar timer...</p>
+
+  <div class="flight-section">
+
+    <h2>🛫 Utresa – Stockholm → Bali</h2>
+
+    <div class="flight-card">
+      <div class="flight-card-header">
+        <span class="flight-direction">ARN → PVG → DPS</span>
+        <span class="flight-date">Torsdag 16 juli 2026</span>
+      </div>
+
+      <div class="leg">
+        <div class="time-block">
+          <div class="time">22:40</div>
+          <div class="iata">ARN</div>
+          <div class="city">Stockholm</div>
+        </div>
+        <div class="leg-middle">
+          <div class="flight-arrow">✈ ──────── ✈</div>
+          <div class="leg-info">
+            <div class="flight-no">MU290</div>
+            <div>9 tim 55 min</div>
+            <div>China Eastern Airlines</div>
+            <div>Ekonomiklass</div>
+          </div>
+        </div>
+        <div class="time-block">
+          <div class="time">14:35</div>
+          <span class="plus1">+1 dag (fre 17 juli)</span>
+          <div class="iata">PVG</div>
+          <div class="city">Shanghai</div>
+        </div>
+      </div>
+
+      <div class="layover">
+        🕐 <span><strong>3 tim 5 min</strong> byte i Shanghai Pudong (PVG)</span>
+      </div>
+
+      <div class="leg">
+        <div class="time-block">
+          <div class="time">17:40</div>
+          <div class="iata">PVG</div>
+          <div class="city">Shanghai</div>
+        </div>
+        <div class="leg-middle">
+          <div class="flight-arrow">✈ ──────── ✈</div>
+          <div class="leg-info">
+            <div class="flight-no">MU5029</div>
+            <div>6 tim 15 min</div>
+            <div>China Eastern Airlines</div>
+            <div>Ekonomiklass</div>
+          </div>
+        </div>
+        <div class="time-block">
+          <div class="time">23:55</div>
+          <span class="plus1">fredag 17 juli</span>
+          <div class="iata">DPS</div>
+          <div class="city">Bali (Denpasar)</div>
+        </div>
+      </div>
+
+      <div class="total-duration">
+        1 mellanlandning &nbsp;·&nbsp; Total restid: <strong>~28 tim 15 min</strong>
+      </div>
     </div>
-  </main>
+
+    <h2>🛬 Hemresa – Bali → Stockholm</h2>
+
+    <div class="flight-card">
+      <div class="flight-card-header">
+        <span class="flight-direction">DPS → DXB → ARN</span>
+        <span class="flight-date">Lördag 1 augusti 2026</span>
+      </div>
+
+      <div class="leg">
+        <div class="time-block">
+          <div class="time">00:35</div>
+          <div class="iata">DPS</div>
+          <div class="city">Bali (Denpasar)</div>
+        </div>
+        <div class="leg-middle">
+          <div class="flight-arrow">✈ ──────── ✈</div>
+          <div class="leg-info">
+            <div class="flight-no">EK399</div>
+            <div>9 tim</div>
+            <div>Emirates</div>
+            <div>Ekonomiklass</div>
+          </div>
+        </div>
+        <div class="time-block">
+          <div class="time">05:35</div>
+          <div class="iata">DXB</div>
+          <div class="city">Dubai</div>
+        </div>
+      </div>
+
+      <div class="layover">
+        🕐 <span><strong>3 tim 10 min</strong> byte i Dubai (DXB)</span>
+      </div>
+
+      <div class="leg">
+        <div class="time-block">
+          <div class="time">08:45</div>
+          <div class="iata">DXB</div>
+          <div class="city">Dubai</div>
+        </div>
+        <div class="leg-middle">
+          <div class="flight-arrow">✈ ──────── ✈</div>
+          <div class="leg-info">
+            <div class="flight-no">EK157</div>
+            <div>7 tim</div>
+            <div>Emirates</div>
+            <div>Ekonomiklass</div>
+          </div>
+        </div>
+        <div class="time-block">
+          <div class="time">13:45</div>
+          <div class="iata">ARN</div>
+          <div class="city">Stockholm</div>
+        </div>
+      </div>
+
+      <div class="total-duration">
+        1 mellanlandning &nbsp;·&nbsp; Total restid: <strong>19 tim 10 min</strong>
+      </div>
+    </div>
+
+    <p class="note">
+      📚 För detaljerat itinerarium dag för dag, se <a href="bali-schema.html">Schema</a>
+    </p>
+
+  </div>
+</main>
+
+<script>
+  function updateCountdown() {
+    const departure = new Date('2026-07-16T22:40:00+02:00');
+    const now = new Date();
+    const diff = departure - now;
+    if (diff <= 0) {
+      document.getElementById('countdown').textContent = '🌴 Vi är på väg till Bali!';
+      return;
+    }
+    const d = Math.floor(diff / 86400000);
+    const h = Math.floor((diff % 86400000) / 3600000);
+    const m = Math.floor((diff % 3600000) / 60000);
+    const s = Math.floor((diff % 60000) / 1000);
+    document.getElementById('countdown').textContent =
+      `${d} dagar  ${h} tim  ${m} min  ${s} sek till avgång`;
+  }
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+</script>
+
 </body>
 </html>
