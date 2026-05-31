@@ -27,28 +27,45 @@
     .day-card li strong {
       color: #2c3e50;
     }
-    .hotel-info {
-      margin-top: 0.5rem;
-      display: none;
-      background-color: #f0f0f0;
-      padding: 0.5rem;
-      border-left: 3px solid #888;
-    }
-    .info-btn {
-      margin-top: 0.3rem;
-      background-color: #eee;
-      padding: 0.3rem 0.6rem;
-      border: none;
-      cursor: pointer;
+    .hotel-notice {
+      margin: 0.5rem 0 1rem 0;
+      background-color: #fff8e1;
+      border-left: 4px solid #f39c12;
+      padding: 0.6rem 0.8rem;
+      border-radius: 0 4px 4px 0;
       font-size: 0.9rem;
+      color: #7d6608;
+    }
+    .hotel-notice strong {
+      color: #b7770d;
+    }
+    .destination-header {
+      background: linear-gradient(135deg, #d35400, #e67e22);
+      color: white;
+      padding: 1rem 1.5rem;
+      border-radius: 8px 8px 0 0;
+      margin-bottom: 0;
+    }
+    .destination-header h2 {
+      margin: 0;
+      font-size: 1.4rem;
+    }
+    .destination-header .dates {
+      font-size: 0.9rem;
+      opacity: 0.9;
+      margin-top: 0.2rem;
+    }
+    .destination-block {
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      margin-bottom: 2.5rem;
+      overflow: hidden;
+    }
+    .destination-days {
+      padding: 1rem 1.5rem;
+      background: #fff;
     }
   </style>
-  <script>
-    function toggleHotelInfo(button) {
-      const info = button.nextElementSibling;
-      info.style.display = info.style.display === 'block' ? 'none' : 'block';
-    }
-  </script>
 </head>
 <body>
   <header>
@@ -68,226 +85,325 @@
     <h2>🗓️ Reseschema dag för dag</h2>
 
     <div class="facts-grid">
-      
-      <!-- Dag 1 -->
-      <div class="fact-card">
-        <h3>Dag 1 – Fredag 16 juli<br><small>ARN → DPS (Indonesien)</small></h3>
-        <ul>
-          <li>22:40 – Avfärd från Stockholm Arlanda (ARN)</li>
-          <li>Natt på flyg (ca 11 timmar)</li>
-        </ul>
+
+      <!-- ═══════════════════════════════════════ -->
+      <!-- CANGGU 17–22 JULI -->
+      <!-- ═══════════════════════════════════════ -->
+      <div class="destination-block">
+        <div class="destination-header">
+          <h2>📍 Canggu</h2>
+          <div class="dates">17–22 juli · 5 nätter</div>
+        </div>
+        <div class="destination-days">
+          <div class="hotel-notice">
+            🏨 <strong>Hotell behöver bokas:</strong> 17–22 juli (5 nätter i Canggu)
+          </div>
+
+          <!-- Dag 1 -->
+          <div class="fact-card">
+            <h3>Dag 1 – Fredag 16 juli<br><small>ARN → DPS</small></h3>
+            <ul>
+              <li>22:40 – Avfärd från Stockholm Arlanda (ARN)</li>
+              <li>Natt på flyget (ca 11 timmar)</li>
+            </ul>
+          </div>
+
+          <!-- Dag 2 -->
+          <div class="fact-card">
+            <h3>Dag 2 – Lördag 17 juli<br><small>Ankomst Bali → Check-in Canggu</small></h3>
+            <ul>
+              <li>23:55 – Landing på Bali (Denpasar/DPS)</li>
+              <li>🛂 Visum on Arrival (VoA) vid ankomst</li>
+              <li>Transfer till hotell i Canggu</li>
+              <li>Check-in ca 03:00–04:00</li>
+            </ul>
+          </div>
+
+          <!-- Dag 3 -->
+          <div class="fact-card">
+            <h3>Dag 3 – Söndag 18 juli<br><small>Canggu – Strand & beach club</small></h3>
+            <ul>
+              <li>😴 Sov ut efter flyget</li>
+              <li>🍳 Brunch</li>
+              <li>🏖️ Strandhäng</li>
+              <li>🌅 Sunset på La Brisa</li>
+              <li>🍽️ Middag + drinkar</li>
+            </ul>
+          </div>
+
+          <!-- Dag 4 -->
+          <div class="fact-card">
+            <h3>Dag 4 – Måndag 19 juli<br><small>Canggu – Surf & Finns Beach Club</small></h3>
+            <ul>
+              <li>🏄 Surflektion</li>
+              <li>🍴 Lunch</li>
+              <li>💪 Gym/pass</li>
+              <li>🌊 Finns Beach Club</li>
+              <li>🍽️ Middag</li>
+            </ul>
+          </div>
+
+          <!-- Dag 5 -->
+          <div class="fact-card">
+            <h3>Dag 5 – Tisdag 20 juli<br><small>Canggu – Kaféer & Surf & Utgång</small></h3>
+            <ul>
+              <li>💪 Morgonträning</li>
+              <li>☕ Café-runda</li>
+              <li>🏄 Surf</li>
+              <li>🍽️ Middag</li>
+              <li>🎉 Utgång</li>
+            </ul>
+          </div>
+
+          <!-- Dag 6 -->
+          <div class="fact-card">
+            <h3>Dag 6 – Onsdag 21 juli<br><small>Seminyak / Kerobokan-dagstur</small></h3>
+            <ul>
+              <li>🚗 Dagstur till Seminyak/Kerobokan (20–40 min)</li>
+              <li>🥔 Potato Head Beach Club</li>
+              <li>🌅 Sunset</li>
+              <li>🍽️ Bra middag</li>
+            </ul>
+          </div>
+
+          <!-- Dag 7 – checkout -->
+          <div class="fact-card">
+            <h3>Dag 7 – Torsdag 22 juli (fm)<br><small>Checkout Canggu → Transfer Uluwatu</small></h3>
+            <ul>
+              <li>🍳 Frukost</li>
+              <li>🧳 Checkout</li>
+              <li>🚗 Transfer till Uluwatu (ca 1 timme)</li>
+            </ul>
+          </div>
+        </div>
       </div>
 
-      <!-- Dag 2 -->
-      <div class="fact-card">
-        <h3>Dag 2 – Lördag 17 juli<br><small>Canggu – check-in</small></h3>
-        <ul>
-          <li>23:55 – Landing på Bali (Denpasar/DPS)</li>
-          <li>🛂 Visum on Arrival (VoA) vid ankomst</li>
-          <li>Kl. 01–02 – Hämta baggage, transport till hotell</li>
-          <li>Kl. 03–04 – Check-in i Canggu</li>
-          <li>Vila och vila upp efter flyg</li>
-          <li>Sent på dagen – Första stranden, sunset börjar vid 18:20</li>
-        </ul>
+      <!-- ═══════════════════════════════════════ -->
+      <!-- ULUWATU 22–26 JULI -->
+      <!-- ═══════════════════════════════════════ -->
+      <div class="destination-block">
+        <div class="destination-header" style="background: linear-gradient(135deg, #1a6b8a, #2980b9);">
+          <h2>📍 Uluwatu</h2>
+          <div class="dates">22–26 juli · 4 nätter</div>
+        </div>
+        <div class="destination-days">
+          <div class="hotel-notice">
+            🏨 <strong>Hotell behöver bokas:</strong> 22–26 juli (4 nätter i Uluwatu)
+          </div>
+
+          <!-- Dag 7 fortsättning -->
+          <div class="fact-card">
+            <h3>Dag 7 – Torsdag 22 juli (em)<br><small>Uluwatu – Ankomst</small></h3>
+            <ul>
+              <li>🏨 Check-in</li>
+              <li>🏖️ Melasti Beach</li>
+              <li>🌅 Sunset</li>
+            </ul>
+          </div>
+
+          <!-- Dag 8 -->
+          <div class="fact-card">
+            <h3>Dag 8 – Fredag 23 juli<br><small>Uluwatu – Surf & Savaya</small></h3>
+            <ul>
+              <li>🏖️ Padang Padang Beach</li>
+              <li>🏄 Surf</li>
+              <li>🍴 Lunch</li>
+              <li>🎉 Savaya Beach Club</li>
+            </ul>
+          </div>
+
+          <!-- Dag 9 -->
+          <div class="fact-card">
+            <h3>Dag 9 – Lördag 24 juli<br><small>Uluwatu – Stranddag & Single Fin</small></h3>
+            <ul>
+              <li>🏖️ Bingin Beach – stranddag</li>
+              <li>🌅 Single Fin sunset</li>
+            </ul>
+          </div>
+
+          <!-- Dag 10 -->
+          <div class="fact-card">
+            <h3>Dag 10 – Söndag 25 juli<br><small>Uluwatu – Tempel & Kecak Dance</small></h3>
+            <ul>
+              <li>🛕 Uluwatu Temple</li>
+              <li>🔥 Kecak Fire Dance</li>
+              <li>🍽️ Bra middag</li>
+            </ul>
+          </div>
+
+          <!-- Dag 11 – checkout -->
+          <div class="fact-card">
+            <h3>Dag 11 – Måndag 26 juli (fm)<br><small>Checkout Uluwatu → Transfer Ubud</small></h3>
+            <ul>
+              <li>🍳 Frukost</li>
+              <li>🧳 Checkout</li>
+              <li>🚗 Transfer till Ubud (ca 1,5–2 timmar)</li>
+            </ul>
+          </div>
+        </div>
       </div>
 
-      <!-- Dag 3 -->
-      <div class="fact-card">
-        <h3>Dag 3 – Söndag 18 juli<br><small>Canggu – Surf & Beach Clubs</small></h3>
-        <ul>
-          <li>🌅 Surfing på Canggu Beach (beginner-vänligt)</li>
-          <li>Lunch på lokalt ställe</li>
-          <li>Eftermiddag – Vila eller utforska Canggu</li>
-          <li>🌅 Sunset vid stranden</li>
-          <li>Kväll – Utgång på beach club eller lokala barer</li>
-        </ul>
+      <!-- ═══════════════════════════════════════ -->
+      <!-- UBUD 26–28 JULI -->
+      <!-- ═══════════════════════════════════════ -->
+      <div class="destination-block">
+        <div class="destination-header" style="background: linear-gradient(135deg, #2d6a2d, #27ae60);">
+          <h2>📍 Ubud</h2>
+          <div class="dates">26–28 juli · 2 nätter</div>
+        </div>
+        <div class="destination-days">
+          <div class="hotel-notice">
+            🏨 <strong>Hotell behöver bokas:</strong> 26–28 juli (2 nätter i Ubud)
+          </div>
+
+          <!-- Dag 11 fortsättning -->
+          <div class="fact-card">
+            <h3>Dag 11 – Måndag 26 juli (em)<br><small>Ubud – Ankomst & Centrum</small></h3>
+            <ul>
+              <li>🏨 Check-in</li>
+              <li>🏘️ Ubud centrum</li>
+              <li>🛍️ Marknad</li>
+              <li>🍽️ Middag</li>
+            </ul>
+          </div>
+
+          <!-- Dag 12 -->
+          <div class="fact-card">
+            <h3>Dag 12 – Tisdag 27 juli<br><small>Ubud – Adventure Day</small></h3>
+            <ul>
+              <li>🏍️ ATV-tur</li>
+              <li>💧 Vattenfall</li>
+              <li>🐒 Monkey Forest</li>
+              <li>💆 Massage</li>
+            </ul>
+          </div>
+
+          <!-- Dag 13 – checkout -->
+          <div class="fact-card">
+            <h3>Dag 13 – Onsdag 28 juli<br><small>Mount Batur → Checkout → Nusa Penida</small></h3>
+            <ul>
+              <li>🌄 Mount Batur sunrise (tidig start!)</li>
+              <li>🏨 Tillbaka till hotellet</li>
+              <li>🧳 Checkout</li>
+              <li>🚗 Transfer till Sanur</li>
+              <li>⛵ Färja från Sanur till Nusa Penida (ca 30 min)</li>
+            </ul>
+          </div>
+        </div>
       </div>
 
-      <!-- Dag 4 -->
-      <div class="fact-card">
-        <h3>Dag 4 – Måndag 19 juli<br><small>Canggu – Surf & Explore</small></h3>
-        <ul>
-          <li>Morgon – Surfing eller vila</li>
-          <li>Lunch – Testa lokal mat (nasi goreng, mie goreng)</li>
-          <li>Eftermiddag – Utforska caféer eller shopping</li>
-          <li>🌅 Sunset</li>
-          <li>Kväll – Restaurang + bar-hopping</li>
-        </ul>
+      <!-- ═══════════════════════════════════════ -->
+      <!-- NUSA PENIDA 28–30 JULI -->
+      <!-- ═══════════════════════════════════════ -->
+      <div class="destination-block">
+        <div class="destination-header" style="background: linear-gradient(135deg, #1a4d6e, #16a085);">
+          <h2>📍 Nusa Penida</h2>
+          <div class="dates">28–30 juli · 2 nätter</div>
+        </div>
+        <div class="destination-days">
+          <div class="hotel-notice">
+            🏨 <strong>Hotell behöver bokas:</strong> 28–30 juli (2 nätter på Nusa Penida)
+          </div>
+
+          <!-- Dag 13 fortsättning -->
+          <div class="fact-card">
+            <h3>Dag 13 – Onsdag 28 juli (em)<br><small>Nusa Penida – Ankomst</small></h3>
+            <ul>
+              <li>🏨 Check-in</li>
+              <li>🌅 Kelingking Beach sunset</li>
+            </ul>
+          </div>
+
+          <!-- Dag 14 -->
+          <div class="fact-card">
+            <h3>Dag 14 – Torsdag 29 juli<br><small>Nusa Penida – Snorkling & Stränder</small></h3>
+            <ul>
+              <li>🤿 Manta-snorkling</li>
+              <li>🏖️ Crystal Bay</li>
+              <li>💎 Diamond Beach</li>
+              <li>🍽️ Middag</li>
+            </ul>
+          </div>
+
+          <!-- Dag 15 – checkout -->
+          <div class="fact-card">
+            <h3>Dag 15 – Fredag 30 juli<br><small>Checkout → Färja tillbaka → Canggu</small></h3>
+            <ul>
+              <li>🌅 Sen frukost</li>
+              <li>🧳 Checkout</li>
+              <li>⛵ Färja tillbaka till Bali (Sanur)</li>
+              <li>🚗 Transfer till Canggu (ca 1 timme)</li>
+            </ul>
+          </div>
+        </div>
       </div>
 
-      <!-- Dag 5 -->
-      <div class="fact-card">
-        <h3>Dag 5 – Tisdag 20 juli<br><small>Canggu → Seminyak dagstur</small></h3>
-        <ul>
-          <li>Morgon – Surfing eller vila i Canggu</li>
-          <li>Kl. 12–13 – Transport till Seminyak (20–40 min)</li>
-          <li>Lunch vid stranden</li>
-          <li>🌅 Beach clubs: KU DE TA, Potato Head eller liknande</li>
-          <li>Sunset + middag</li>
-          <li>Hemresa till Canggu sent på kväll</li>
-        </ul>
+      <!-- ═══════════════════════════════════════ -->
+      <!-- CANGGU SISTA NATTEN 30–31 JULI -->
+      <!-- ═══════════════════════════════════════ -->
+      <div class="destination-block">
+        <div class="destination-header" style="background: linear-gradient(135deg, #7d3c98, #9b59b6);">
+          <h2>📍 Canggu – Sista natten</h2>
+          <div class="dates">30–31 juli · 1 natt</div>
+        </div>
+        <div class="destination-days">
+          <div class="hotel-notice">
+            🏨 <strong>Hotell behöver bokas:</strong> 30–31 juli (1 natt i Canggu) · <em>Tips: fråga om ni kan lämna väskorna på hotellet kvällen den 31 juli inför flyget!</em>
+          </div>
+
+          <!-- Dag 15 fortsättning -->
+          <div class="fact-card">
+            <h3>Dag 15 – Fredag 30 juli (em)<br><small>Canggu – Tillbaka i Canggu</small></h3>
+            <ul>
+              <li>🏨 Check-in</li>
+              <li>🏊 Pooldag</li>
+              <li>🛍️ Shopping</li>
+              <li>🏖️ Sista beach cluben</li>
+              <li>🍽️ Fin middag</li>
+            </ul>
+          </div>
+
+          <!-- Dag 16 -->
+          <div class="fact-card">
+            <h3>Dag 16 – Lördag 31 juli<br><small>Canggu – Sista dagen på Bali 🌴</small></h3>
+            <ul>
+              <li>😴 Sovmorgon</li>
+              <li>🍳 Brunch</li>
+              <li>💆 Massage</li>
+              <li>🌅 Sista solnedgången på Bali!</li>
+              <li>🍽️ Middag</li>
+              <li>🚗 Ca 20:30–21:00 – Avfärd mot flygplatsen</li>
+              <li style="color: #888; font-style: italic;">💡 Tips: Lämna väskorna på hotellet under dagen om möjligt</li>
+            </ul>
+          </div>
+        </div>
       </div>
 
-      <!-- Dag 6 -->
+      <!-- ═══════════════════════════════════════ -->
+      <!-- HEMRESA -->
+      <!-- ═══════════════════════════════════════ -->
       <div class="fact-card">
-        <h3>Dag 6 – Onsdag 21 juli<br><small>Canggu → Uluwatu</small></h3>
+        <h3>Dag 17 – Söndag 1 augusti<br><small>DPS → ARN – Hemresa ✈️</small></h3>
         <ul>
-          <li>Morgon – Vila eller sista surfing i Canggu</li>
-          <li>Checkout från Canggu</li>
-          <li>Kl. 11–12 – Transport till Uluwatu (ca 1 timme)</li>
-          <li>Check-in på nytt hotell</li>
-          <li>Lunch</li>
-          <li>Eftermiddag – Utforska Uluwatu Temple eller stranden</li>
-          <li>🌅 Sunset vid klipporna</li>
-        </ul>
-      </div>
-
-      <!-- Dag 7 -->
-      <div class="fact-card">
-        <h3>Dag 7 – Torsdag 22 juli<br><small>Uluwatu – Strand & Cliff Diving</small></h3>
-        <ul>
-          <li>Morgon – Surfing på Padang Padang Beach</li>
-          <li>Afternoon – Utforska stränderna runt Uluwatu</li>
-          <li>🌅 Sunset på Uluwatu Temple</li>
-          <li>Kväll – Dinner på beach club</li>
-        </ul>
-      </div>
-
-      <!-- Dag 8 -->
-      <div class="fact-card">
-        <h3>Dag 8 – Fredag 23 juli<br><small>Uluwatu – Avslappning</small></h3>
-        <ul>
-          <li>Morgon – Yoga eller vila på stranden</li>
-          <li>Lunch</li>
-          <li>Eftermiddag – Spa eller strand</li>
-          <li>🌅 Sunset</li>
-          <li>Kväll – Utgång</li>
-        </ul>
-      </div>
-
-      <!-- Dag 9 -->
-      <div class="fact-card">
-        <h3>Dag 9 – Lördag 24 juli<br><small>Uluwatu → Ubud</small></h3>
-        <ul>
-          <li>Morgon – Sista surfing eller vila</li>
-          <li>Checkout från Uluwatu</li>
-          <li>Kl. 11–13 – Transport till Ubud (ca 1,5–2 timmar)</li>
-          <li>Check-in på nytt hotell</li>
-          <li>Lunch</li>
-          <li>Eftermiddag – Utforska Ubud centrum (konstmarknaden)</li>
-          <li>Kväll – Dinner på restaurang</li>
-        </ul>
-      </div>
-
-      <!-- Dag 10 -->
-      <div class="fact-card">
-        <h3>Dag 10 – Söndag 25 juli<br><small>Ubud – Nature & Culture</small></h3>
-        <ul>
-          <li>Morgon – Risfält eller ATV-tur genom djungeln</li>
-          <li>Lunch</li>
-          <li>Afternoon – Besök på vattenfall (t.ex. Tegenungan)</li>
-          <li>Kväll – Relaxed dinner, vila upp</li>
-        </ul>
-      </div>
-
-      <!-- Dag 11 -->
-      <div class="fact-card">
-        <h3>Dag 11 – Måndag 26 juli<br><small>Ubud – Adventure Day</small></h3>
-        <ul>
-          <li>Morgon – Rafting genom Ayung River</li>
-          <li>Lunch</li>
-          <li>Afternoon – Visitera Monkey Forest eller andra platser</li>
-          <li>Kväll – Relaxation</li>
-        </ul>
-      </div>
-
-      <!-- Dag 12 -->
-      <div class="fact-card">
-        <h3>Dag 12 – Tisdag 27 juli<br><small>Ubud – Chill Day</small></h3>
-        <ul>
-          <li>Morgon – Yoga, vila eller spa</li>
-          <li>Lunch</li>
-          <li>Afternoon – Utforska kafé eller shopping</li>
-          <li>Kväll – Relaxed dinner</li>
-        </ul>
-      </div>
-
-      <!-- Dag 13 -->
-      <div class="fact-card">
-        <h3>Dag 13 – Onsdag 28 juli<br><small>Ubud → Nusa Penida</small></h3>
-        <ul>
-          <li>Morgon – Vila eller sista aktivitet i Ubud</li>
-          <li>Checkout från Ubud</li>
-          <li>Kl. 12–13 – Transport till Sanur (för färja till Nusa Penida)</li>
-          <li>Kl. 14–15 – Färja från Sanur till Nusa Penida (ca 30 min)</li>
-          <li>Check-in på hotell i Nusa Penida</li>
-          <li>Lunch</li>
-          <li>🌅 Sunset vid Kelingking Beach</li>
-        </ul>
-      </div>
-
-      <!-- Dag 14 -->
-      <div class="fact-card">
-        <h3>Dag 14 – Torsdag 29 juli<br><small>Nusa Penida – Snorkling & Wow-views</small></h3>
-        <ul>
-          <li>Morgon – Snorkling day trip (Manta Rays eller Angel's Billabong)</li>
-          <li>Lunch</li>
-          <li>Afternoon – Kelingking Beach eller andra vyer</li>
-          <li>🌅 Sunset</li>
-          <li>Kväll – Dinner på stranden</li>
-        </ul>
-      </div>
-
-      <!-- Dag 15 -->
-      <div class="fact-card">
-        <h3>Dag 15 – Fredag 30 juli<br><small>Nusa Penida – Chill eller sista äventyr</small></h3>
-        <ul>
-          <li>Morgon – Beach time eller sista aktivitet</li>
-          <li>Lunch</li>
-          <li>Afternoon – Vila på stranden</li>
-          <li>🌅 Sunset</li>
-          <li>Kväll – Early night eller dinner</li>
-        </ul>
-      </div>
-
-      <!-- Dag 16 -->
-      <div class="fact-card">
-        <h3>Dag 16 – Lördag 31 juli<br><small>Nusa Penida → Canggu (sista natt)</small></h3>
-        <ul>
-          <li>Morgon – Vila eller strand</li>
-          <li>Checkout från Nusa Penida</li>
-          <li>Kl. 12–13 – Färja från Nusa Penida till Sanur</li>
-          <li>Kl. 13–15 – Transport från Sanur till Canggu (ca 1 timme)</li>
-          <li>Check-in på hotell i Canggu (sista natt)</li>
-          <li>Lunch</li>
-          <li>🌅 Sunset – SISTA SOLNEDGÅNGEN!</li>
-          <li>Kväll – Party & celebration, sista natten på Bali!</li>
-        </ul>
-      </div>
-
-      <!-- Dag 17 -->
-      <div class="fact-card">
-        <h3>Dag 17 – Söndag 1 augusti<br><small>DPS → ARN (hemresa)</small></h3>
-        <ul>
-          <li>Morgon – Checkout från hotell</li>
-          <li>Lunch vid flygplatsen eller i vägen</li>
-          <li>Kl. 00:35 – Avfärd från Denpasar (DPS)</li>
-          <li>Natt på flyg (ca 11 timmar)</li>
-          <li>Ankomst till Stockholm senare dagen</li>
+          <li>00:35 – Avfärd från Denpasar (DPS)</li>
+          <li>Natt på flyget (ca 11 timmar)</li>
+          <li>Ankomst till Stockholm Arlanda under dagen</li>
+          <li style="color: #888; font-style: italic;">ℹ️ Ingen hotellnatt behövs natten 31 juli–1 augusti</li>
         </ul>
       </div>
 
     </div>
 
+    <!-- KARTA -->
     <div class="map-section">
       <h2>🗺️ Karta över Bali</h2>
-      <p>Översikt över Bali och vår huvudsakliga rutt: flygplatsen, Canggu, Seminyak, Uluwatu, Padang Padang, Ubud, Tegenungan och Sanur.</p>
+      <p>Översikt över rutten: Canggu → Seminyak/Kerobokan → Uluwatu → Ubud → Sanur → Nusa Penida → Canggu.</p>
       <p style="font-size: 0.9rem; color: #666; font-style: italic;">💡 <strong>Obs:</strong> Nusa Penida nås med färja från Sanur (ca 30 min) och visas som en separat markering på kartan.</p>
       <div class="map-container" style="height: 450px; border-radius: 8px; overflow: hidden;">
         <div id="bali-map" style="width: 100%; height: 100%;"></div>
       </div>
       <div style="text-align: center; margin-top: 1rem;">
-        <a href="https://www.google.com/maps/dir/Ngurah+Rai+International+Airport+(DPS)/Canggu,+Bali/Seminyak,+Bali/Uluwatu+Temple,+Bali/Padang+Padang+Beach,+Bali/Ubud,+Bali/Tegenungan+Waterfall,+Bali/Sanur+Beach,+Bali/@-8.6721834,115.021616,11z"
+        <a href="https://www.google.com/maps/dir/Ngurah+Rai+International+Airport+(DPS)/Canggu,+Bali/Seminyak,+Bali/Uluwatu+Temple,+Bali/Padang+Padang+Beach,+Bali/Ubud,+Bali/Sanur+Beach,+Bali/@-8.6721834,115.021616,11z"
            target="_blank"
            style="display: inline-block; background: #4285F4; color: white; padding: 0.6rem 1.4rem; border-radius: 6px; text-decoration: none; font-weight: bold;">
           🗺️ Öppna rutten i Google Maps
@@ -296,7 +412,7 @@
     </div>
 
     <p style="text-align: center; margin-top: 3rem; font-style: italic;">
-      💡 Denna ett preliminärt schema. Exakta tider och aktiviteter kan justeras efter önskemål och väderförhållanden!
+      💡 Detta är ett preliminärt schema. Exakta tider och aktiviteter kan justeras efter önskemål och väderförhållanden!
     </p>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -307,15 +423,15 @@
         attribution: '© OpenStreetMap contributors'
       }).addTo(map);
 
+      // Huvudrutten på Bali (röda markeringar)
       const platser = [
-        { namn: "1. Flygplatsen (DPS)",    lat: -8.7467, lng: 115.1664 },
-        { namn: "2. Canggu",               lat: -8.6478, lng: 115.1303 },
-        { namn: "3. Seminyak",             lat: -8.6913, lng: 115.1512 },
-        { namn: "4. Uluwatu Temple",       lat: -8.8290, lng: 115.0849 },
-        { namn: "5. Padang Padang Beach",  lat: -8.8111, lng: 115.1137 },
-        { namn: "6. Ubud",                 lat: -8.5069, lng: 115.2625 },
-        { namn: "7. Tegenungan Waterfall", lat: -8.5754, lng: 115.2831 },
-        { namn: "8. Sanur Beach",          lat: -8.7059, lng: 115.2644 },
+        { namn: "1. Flygplatsen (DPS)",    lat: -8.7467, lng: 115.1664, dagar: "Dag 1–2" },
+        { namn: "2. Canggu",               lat: -8.6478, lng: 115.1303, dagar: "Dag 2–7 & 15–16" },
+        { namn: "3. Seminyak / Kerobokan", lat: -8.6913, lng: 115.1512, dagar: "Dag 6 (dagstur)" },
+        { namn: "4. Uluwatu",              lat: -8.8290, lng: 115.0849, dagar: "Dag 7–11" },
+        { namn: "5. Padang Padang Beach",  lat: -8.8111, lng: 115.1137, dagar: "Dag 8" },
+        { namn: "6. Ubud",                 lat: -8.5069, lng: 115.2625, dagar: "Dag 11–13" },
+        { namn: "7. Sanur (färjeläget)",   lat: -8.7059, lng: 115.2644, dagar: "Dag 13 & 15" },
       ];
 
       const latlngs = platser.map(p => [p.lat, p.lng]);
@@ -328,10 +444,10 @@
           iconSize: [28, 28],
           iconAnchor: [14, 14],
         });
-        L.marker([p.lat, p.lng], { icon }).addTo(map).bindPopup(p.namn);
+        L.marker([p.lat, p.lng], { icon }).addTo(map).bindPopup(`<strong>${p.namn}</strong><br><em>${p.dagar}</em>`);
       });
 
-      // Nusa Penida – blå markering med båtsymbol
+      // Nusa Penida – blå markering
       const nusaIcon = L.divIcon({
         className: '',
         html: `<div style="background:#2980b9;color:white;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-weight:bold;font-size:13px;border:2px solid white;box-shadow:0 2px 6px rgba(0,0,0,0.4)">⛵</div>`,
@@ -340,7 +456,7 @@
       });
       L.marker([-8.7278, 115.5444], { icon: nusaIcon })
         .addTo(map)
-        .bindPopup("9. Nusa Penida (dag 13–15)<br><em>🚢 Färja från Sanur, ca 30 min</em>");
+        .bindPopup("8. Nusa Penida<br><em>Dag 13–15</em><br>🚢 Färja från Sanur, ca 30 min");
 
       // Streckad blå linje för färjerutten Sanur → Nusa Penida
       L.polyline(
