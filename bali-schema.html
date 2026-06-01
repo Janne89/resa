@@ -39,6 +39,58 @@
     .hotel-notice strong {
       color: #b7770d;
     }
+    .hotel-booked {
+      margin: 0 0 1.2rem 0;
+      background-color: #eafaf1;
+      border: 1px solid #a9dfbf;
+      border-radius: 8px;
+      padding: 0.9rem 1.1rem;
+      font-size: 0.9rem;
+      color: #1e6a3e;
+    }
+    .hotel-booked .hotel-booked-title {
+      font-size: 1rem;
+      font-weight: bold;
+      color: #1a5c35;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .hotel-booked .hotel-booked-badge {
+      display: inline-block;
+      background: #27ae60;
+      color: white;
+      font-size: 0.75rem;
+      font-weight: bold;
+      padding: 2px 8px;
+      border-radius: 12px;
+      letter-spacing: 0.03em;
+    }
+    .hotel-booked-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem 1.5rem;
+      margin-bottom: 0.6rem;
+    }
+    .hotel-booked-item label {
+      display: block;
+      font-size: 0.78rem;
+      color: #1e6a3e;
+      opacity: 0.75;
+      margin-bottom: 1px;
+    }
+    .hotel-booked-item span {
+      font-weight: bold;
+      color: #1a5c35;
+    }
+    .hotel-booked-note {
+      font-size: 0.82rem;
+      color: #1e6a3e;
+      border-top: 1px solid #a9dfbf;
+      padding-top: 0.5rem;
+      margin-top: 0.4rem;
+    }
     .destination-header {
       background: linear-gradient(135deg, #d35400, #e67e22);
       color: white;
@@ -95,8 +147,34 @@
           <div class="dates">17–22 juli · 5 nätter</div>
         </div>
         <div class="destination-days">
-          <div class="hotel-notice">
-            🏨 <strong>Hotell behöver bokas:</strong> 17–22 juli (5 nätter i Canggu)
+
+          <!-- HOTELL BOKAD -->
+          <div class="hotel-booked">
+            <div class="hotel-booked-title">
+              🏨 Sunny Village Batu Bolong
+              <span class="hotel-booked-badge">✓ Bokad</span>
+            </div>
+            <div class="hotel-booked-grid">
+              <div class="hotel-booked-item">
+                <label>Incheckning</label>
+                <span>Fre 17 juli, från 15:00</span>
+              </div>
+              <div class="hotel-booked-item">
+                <label>Utcheckning</label>
+                <span>Ons 22 juli, senast 11:00</span>
+              </div>
+              <div class="hotel-booked-item">
+                <label>Check-in öppettider</label>
+                <span>15:00–23:00</span>
+              </div>
+              <div class="hotel-booked-item">
+                <label>Lägsta ålder</label>
+                <span>18 år</span>
+              </div>
+            </div>
+            <div class="hotel-booked-note">
+              ⚠️ <strong>Obs:</strong> Vi anländer ca 03:00 natten till 18 juli — kontakta hotellet i förväg för att bekräfta sen incheckning utanför ordinarie tider.
+            </div>
           </div>
 
           <!-- Dag 1 -->
@@ -114,8 +192,8 @@
             <ul>
               <li>23:55 – Landing på Bali (Denpasar/DPS)</li>
               <li>🛂 Visum on Arrival (VoA) vid ankomst</li>
-              <li>Transfer till hotell i Canggu</li>
-              <li>Check-in ca 03:00–04:00</li>
+              <li>Transfer till Sunny Village Batu Bolong, Canggu</li>
+              <li>Check-in ca 03:00–04:00 <strong>(sen ankomst – meddela hotellet)</strong></li>
             </ul>
           </div>
 
@@ -171,7 +249,7 @@
             <h3>Dag 7 – Torsdag 22 juli (fm)<br><small>Checkout Canggu → Transfer Uluwatu</small></h3>
             <ul>
               <li>🍳 Frukost</li>
-              <li>🧳 Checkout</li>
+              <li>🧳 Checkout <strong>senast 11:00</strong></li>
               <li>🚗 Transfer till Uluwatu (ca 1 timme)</li>
             </ul>
           </div>
@@ -423,7 +501,6 @@
         attribution: '© OpenStreetMap contributors'
       }).addTo(map);
 
-      // Huvudrutten på Bali (röda markeringar)
       const platser = [
         { namn: "1. Flygplatsen (DPS)",    lat: -8.7467, lng: 115.1664, dagar: "Dag 1–2" },
         { namn: "2. Canggu",               lat: -8.6478, lng: 115.1303, dagar: "Dag 2–7 & 15–16" },
@@ -447,7 +524,6 @@
         L.marker([p.lat, p.lng], { icon }).addTo(map).bindPopup(`<strong>${p.namn}</strong><br><em>${p.dagar}</em>`);
       });
 
-      // Nusa Penida – blå markering
       const nusaIcon = L.divIcon({
         className: '',
         html: `<div style="background:#2980b9;color:white;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-weight:bold;font-size:13px;border:2px solid white;box-shadow:0 2px 6px rgba(0,0,0,0.4)">⛵</div>`,
@@ -458,7 +534,6 @@
         .addTo(map)
         .bindPopup("8. Nusa Penida<br><em>Dag 13–15</em><br>🚢 Färja från Sanur, ca 30 min");
 
-      // Streckad blå linje för färjerutten Sanur → Nusa Penida
       L.polyline(
         [[-8.7059, 115.2644], [-8.7278, 115.5444]],
         { color: '#2980b9', weight: 2, dashArray: '6, 8' }
